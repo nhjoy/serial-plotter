@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character set, compatibility, and responsive design -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google fonts for Roboto and Material Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Stylesheet for the application -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Title of the application -->
+  <title>Serial Plotter</title>
+</head>
+<body>
+  <!-- Main container for the application -->
+  <div class="app-container">
+    <!-- Application header -->
+    <header class="app-header">
+      <h1>Serial Plotter</h1>
+    </header>
+
+    <!-- Controls panel for serial communication settings -->
+    <div class="control-panel">
+      <!-- Dropdown controls for selecting serial port and baud rate -->
+      <div class="port-controls">
+        <label for="serialPort">Serial Port:</label>
+        <select id="serialPort"></select>
+        
+        <label for="baudRate">Baud Rate:</label>
+        <select id="baudRate">
+          <option value="9600">9600</option>
+          <option value="19200">19200</option>
+          <option value="38400">38400</option>
+          <option value="57600">57600</option>
+          <option value="74880">74880</option>
+          <option value="115200">115200</option>
+          <option value="230400">230400</option>
+          <option value="250000">250000</option>
+        </select>
+      </div>
+
+      <!-- Button controls for actions -->
+      <div class="button-controls">
+        <button id="connectButton" class="md-button">Connect</button>
+        <button id="startButton" class="md-button">Start Plotting</button>
+        <button id="saveButton" class="md-button">Save Data</button>
+        <button id="clearButton" class="md-button">Clear Data</button>
+        <button id="exportButton" class="md-button">Export CSV</button>
+      </div>
+    </div>
+
+    <!-- Container for chart display -->
+    <div class="chart-container">
+      <canvas id="plot"></canvas>
+    </div>
+  </div>
+
+  <!-- External scripts for Chart.js and application logic -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

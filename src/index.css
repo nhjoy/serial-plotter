@@ -1,0 +1,144 @@
+/* General styles */
+
+/* Resets padding and margin to remove browser defaults and sets box-sizing to border-box for consistent dimensions */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sets the default font and full height for the html and body to stretch the app container */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Application styles */
+
+/* Defines the main container for the app, centers content vertically and horizontally */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #ecf0f1;
+  background-color: #2c3e50;
+}
+
+/* Header styles */
+
+/* Styles for the app header, specifically the h1 element */
+.app-header h1 {
+  font-weight: 300;
+  font-size: 2.5rem; /* Sets the font size of the app title */
+  margin: 1rem 0;
+}
+
+/* Control panel styles */
+
+/* Styles the control panel, allows wrapping for responsiveness */
+.control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Port controls styles */
+
+/* Styles the port control sections, aligns items vertically */
+.port-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+/* Styles for the labels in the port controls */
+.port-controls label {
+  margin-right: 0.5rem;
+}
+
+/* Styles for the select elements in the port controls */
+.port-controls select {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background-color: #34495e;
+  border: 1px solid #34495e;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Button controls styles */
+
+/* Styles the button controls section, aligns items vertically */
+.button-controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for buttons */
+.md-button {
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  background-color: #34495e;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  min-width: 100px; /* Ensures uniform button width */
+  text-align: center;
+}
+
+/* Hover state for buttons */
+.md-button:hover {
+  background-color: #4e6a85;
+}
+
+/* Active state for buttons, used to indicate a button is toggled on */
+.md-button.active {
+  background-color: #16a085;
+}
+
+/* Chart container styles */
+
+/* Styles the chart container */
+.chart-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+/* Ensures the canvas element stretches to fill its container */
+.chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Responsive design adjustments */
+
+/* Adjusts layout for small screen sizes */
+@media (max-width: 768px) {
+  .control-panel, .port-controls, .button-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .port-controls, .button-controls {
+    margin-bottom: 1rem;
+  }
+
+  .port-controls select, .md-button {
+    margin: 0.5rem 0;
+  }
+
+  .md-button {
+    width: 100%; /* Full width buttons for small screens */
+  }
+}
